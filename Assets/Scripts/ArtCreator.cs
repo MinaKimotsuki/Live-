@@ -43,13 +43,14 @@ public class ArtCreator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Instantiate(timing);
-            ParticleSystem[] particles = new ParticleSystem[timing.transform.childCount];
+            /*ParticleSystem[] particles = new ParticleSystem[timing.transform.childCount];
             for (int i = 0; i < timing.transform.childCount; i++)
             {
                 particles[i] = timing.transform.GetChild(i).GetComponent<ParticleSystem>();
             }
             MakeButtonPushTiming(particles[0]);
-            particles[0].Play();
+            Debug.Log(particles[0].GetInstanceID());
+            particles[0].Play();*/
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -272,6 +273,11 @@ public class ArtCreator : MonoBehaviour
             MoveCurveRoundCircle();
         }
     }*/
+
+    void SetRandomPosition(ParticleSystem particle)
+    {
+        particle.transform.position = new Vector3(Random.Range(-8f, 8f), Random.Range(-5f, 5), 0);
+    }
 
     void MakeButtonPushTiming(ParticleSystem particle)
     {
