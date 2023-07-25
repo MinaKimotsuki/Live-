@@ -30,7 +30,7 @@ public class LineRoundCircleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        artCreator.DestroyItsself(particles, gameObject); ;
+        artCreator.DestroyItsself(particles, gameObject);
     }
 
     void MakeLineRoundCircle(ParticleSystem particle, int i)
